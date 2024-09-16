@@ -1,0 +1,76 @@
+//WOLVESBANE BAG CLEANER
+//MOBILE FORGE REQUIRED IF YOU LOOT ORE
+//MASTER KEYS REQUIRED ALONG WITH ANY KEYS FOR THINGS YOU LOOT
+//BAG OF HOLDING REQUIRED
+//YOU WILL NEED TO PUT SERIAL OF YOUR MASTER STORAGE AND BAG OF HOLDING
+//INTO THE LIST BELOW UNDER USER INPUTS
+//STM LIST ARE THINGS YOU LOOT WHICH YOU MIGHT NOT HAVE ON YOUR MASTER STORAGE
+//IT WILL MOVE THOSE FROM MASTER STORAGE TO BAG OF HOLDING STM LIST
+//TESTED WITH 8.2.158 RE
+//XCESS WOLVESBANE
+//PUT THIS ON LOOP AND AUTOSTART WHEN YOU LOGIN
+//[][][][][][][][][][][][][][][][][][][][][]
+//USER INPUTS
+//[][][][][][][][][][][][][][][][][][][][][]
+if not listexists 'WBC'
+    createlist 'WBC'
+    pushlist 'WBC' 100 //NUMBER OF ITEMS IN BACKPACK BEFORE IT CLEANS
+    pushlist 'WBC' 200 //WEIGHT OF PLAYER BEFORE IT CLEANS
+    pushlist 'WBC' 0x4008E99A //*SERIAL OF YOUR MASTER STORAGE*
+    pushlist 'WBC' 0x400AF5A4 //*SERIAL FOR BAG OF HOLDING*
+    pushlist 'WBC' 0x402df56c //*SERIAL OF YOUR MASTER KEYS*
+endif
+//THIS IS LOOT YOU WANT MOVED FROM MASTER STORAGE TO BAG OF HOLDING
+if not listexists 'STM' //STUFF TO MOVE
+    createlist 'STM' 
+    pushlist 'STM' 0xf3f //ITEM TYPE ARROWS
+    pushlist 'STM' 0x26b8 //ITEM TYPE WOLF DUST
+    pushlist 'STM' 0x5732 //ITEM TYPE CRYSTALLINE BLACKROCK
+    pushlist 'STM' 0x1726 //ITEM TYPE ROUGH STONE
+endif
+//[][][][][][][][][][][][][][][][][][][][][]
+//ORE GRAPHICS[][][][][][][][][][][][][][][]
+//[][][][][][][][][][][][][][][][][][][][][]
+if not listexists 'Ores'
+  createlist 'Ores'
+  pushlist 'Ores' 0x19b7
+  pushlist 'Ores' 0x19b8
+  pushlist 'Ores' 0x19ba
+  pushlist 'Ores' 0x19b9
+endif
+//[][][][][][][][][][][][][][][][][][][][][]
+//END USER INPUTS
+//[][][][][][][][][][][][][][][][][][][][][]
+if not timerexists 'LC' //ARROW CHECK
+    createtimer 'LC'
+endif
+if timer 'LC' > 60000
+ for 0 to 'STM'
+     if @findtype STM[] 'any' WBC[2]
+         @moveitem 'found' WBC[3]
+         pause 650
+     endif
+ endfor
+ for 0 to 'STM'
+     if @findtype STM[] 'any' 'backpack' 'any' 0
+          @moveitem 'found' WBC[3]
+         pause 650
+     endif
+ endfor
+settimer 'LC' 0
+endif
+if contents 'backpack' > WBC[0] or weight >= WBC[1]
+    waitforcontext WBC[4] 2 10000
+endif
+for 0 to 'Ores'
+  if counttype Ores[] 'any' 'backpack' >= 1
+    for 0 to 'Ores'
+     while @findtype Ores[] 'any' 'backpack'
+      useobject 'found'
+      waitfortarget 2000
+      targettype 0xe32 'any' 'backpack'
+     endwhile
+    endfor
+  endif
+endfor
+pause 1000

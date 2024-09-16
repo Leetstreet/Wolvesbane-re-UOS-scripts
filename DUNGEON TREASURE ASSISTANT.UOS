@@ -1,0 +1,35 @@
+//[][][][][][][][][][][][][][][]
+//XCESS WOLVESBANE 
+//DUNGEON CHEST ASSISTANT
+//[][][][][][][][][][][][][][][]
+//[][][][][][][][][][][][][][][]
+//STUFF TO LOOT
+//[][][][][][][][][][][][][][][]
+if not listexists 'dtreasure'
+    createlist 'dtreasure'
+    pushlist 'dtreasure' 0xeed
+    pushlist 'dtreasure' 0xfb6
+    pushlist 'dtreasure' 0x14f0
+endif
+//[][][][][][][][][][][][][][][]
+//USER VARIABLES
+////[][][][][][][][][][][][][][][]
+if not listexists 'treasureveriables'
+    createlist 'treasureveriables'
+    pushlist 'treasureveriables' 0x4008e99a
+endif
+////[][][][][][][][][][][][][][][]
+promptalias 'Treasure'
+usetype 0x14fc 'any' 'backpack'
+waitingfortarget 6000
+target 'Treasure'
+pause 2000
+useobject 'Treasure'
+pause 640
+useobject 'Treasure'
+pause 640
+for 0 to 'dtreasure'
+    while @movetype dtreasure[] 'treasure' treasureveriables[0] 0 0 0 'any'
+        pause 640
+    endwhile
+endfor

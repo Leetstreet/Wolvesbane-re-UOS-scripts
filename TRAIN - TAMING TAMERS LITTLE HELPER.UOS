@@ -1,0 +1,481 @@
+//[][][][][][][][][][][][][][][][][][][][]
+//XCESS WOVLESBANE
+//TRAIN TAMING WITH TAMER'S LITTLE HELPER
+//[][][][][][][][][][][][][][][][][][][][]
+while skill 'Animal Taming' <= 11
+  //[][][][][][][][][][][][][][][][]
+  //USESES THE TAMER HELPER
+  //[][][][][][][][][][][][][][][][]
+  usetype 0x139a 'any' 'backpack'
+  waitforgump 0xf987f800 15000
+  replygump 0xf987f800 1
+  pause 1000
+  //[][][][][][][][][][][][][][][][]
+  //FINDS THE TAMEABLE ANIMAL
+  //[][][][][][][][][][][][][][][][]
+  while @findtype 0x58 'any' 'ground' 'any' 'any' 1
+    @clearjournal
+    //[][][][][][][][][][][][][][][][]
+    //USES ANIMAL TAMING AND TARGETS THE FOUND ANIMAL FROM ABOVE
+    //[][][][][][][][][][][][][][][][]
+    useskill "Animal Taming"
+    waitfortarget 10000
+    target 'found'
+    //[][][][][][][][][][][][][][][][]
+    //WAITS FOR THE PASS OR FAIL ON THE HORSE
+    //[][][][][][][][][][][][][][][][]
+    while not @injournal 'It seems to accept you as master.'
+      pause 500
+      if @injournal 'You fail to tame the creature'
+        break
+      endif
+    endwhile
+    //[][][][][][][][][][][][][][][][]
+    //DOUBLE CLICKS THE PET
+    //[][][][][][][][][][][][][][][][]
+    while @findtype 0x58 'any' 'ground' 'any' 'any' 1
+    useobject 'found'
+    pause 800
+endwhile
+  endwhile
+endwhile
+//[][][][][][][][][][][][][][][][]
+//[][][][][][][][][][][][][][][][]
+//[][][][][][][][][][][][][][][][]
+while skill 'Animal Taming' <= 23
+  //[][][][][][][][][][][][][][][][]
+  //USESES THE TAMER HELPER
+  //[][][][][][][][][][][][][][][][]
+  usetype 0x139a 'any' 'backpack'
+  waitforgump 0xf987f800 15000
+  replygump 0xf987f800 2
+ pause 1000
+  //[][][][][][][][][][][][][][][][]
+  //FINDS THE TAMEABLE ANIMAL
+  //[][][][][][][][][][][][][][][][]
+  while @findtype 0xcf 'any' 'ground' 'any' 'any' 1
+    @clearjournal
+    //[][][][][][][][][][][][][][][][]
+    //USES ANIMAL TAMING AND TARGETS THE FOUND ANIMAL FROM ABOVE
+    //[][][][][][][][][][][][][][][][]
+    useskill "Animal Taming"
+    waitfortarget 10000
+    target 'found'
+    //[][][][][][][][][][][][][][][][]
+    //WAITS FOR THE PASS OR FAIL ON THE HORSE
+    //[][][][][][][][][][][][][][][][]
+    while not @injournal 'It seems to accept you as master.'
+      pause 500
+      if @injournal 'You fail to tame the creature'
+        break
+      endif
+    endwhile
+    //[][][][][][][][][][][][][][][][]
+    //DOUBLE CLICKS THE PET
+    //[][][][][][][][][][][][][][][][]
+    while @findtype 0xcf 'any' 'ground' 'any' 'any' 1
+    useobject 'found'
+    pause 800
+endwhile
+  endwhile
+endwhile
+//[][][][][][][][][][][][][][][][]
+//[][][][][][][][][][][][][][][][]
+//[][][][][][][][][][][][][][][][]
+while skill 'Animal Taming' <= 35
+  //[][][][][][][][][][][][][][][][]
+  //USESES THE TAMER HELPER
+  //[][][][][][][][][][][][][][][][]
+  usetype 0x139a 'any' 'backpack'
+  waitforgump 0xf987f800 15000
+  replygump 0xf987f800 3
+pause 1000
+  //[][][][][][][][][][][][][][][][]
+  //FINDS THE TAMEABLE ANIMAL
+  //[][][][][][][][][][][][][][][][]
+  while @findtype 0xe1 'any' 'ground' 'any' 'any' 1
+    @clearjournal
+    //[][][][][][][][][][][][][][][][]
+    //USES ANIMAL TAMING AND TARGETS THE FOUND ANIMAL FROM ABOVE
+    //[][][][][][][][][][][][][][][][]
+    useskill "Animal Taming"
+    waitfortarget 10000
+    target 'found'
+    //[][][][][][][][][][][][][][][][]
+    //WAITS FOR THE PASS OR FAIL ON THE HORSE
+    //[][][][][][][][][][][][][][][][]
+    while not @injournal 'It seems to accept you as master.'
+      pause 500
+      if @injournal 'You fail to tame the creature'
+        break
+      endif
+    endwhile
+    //[][][][][][][][][][][][][][][][]
+    //DOUBLE CLICKS THE PET
+    //[][][][][][][][][][][][][][][][]
+    while @findtype 0xe1 'any' 'ground' 'any' 'any' 1
+    useobject 'found'
+    pause 800
+endwhile
+  endwhile
+endwhile
+//[][][][][][][][][][][][][][][][]
+//[][][][][][][][][][][][][][][][]
+//[][][][][][][][][][][][][][][][]
+while skill 'Animal Taming' <= 41
+  //[][][][][][][][][][][][][][][][]
+  //USESES THE TAMER HELPER
+  //[][][][][][][][][][][][][][][][]
+  usetype 0x139a 'any' 'backpack'
+  waitforgump 0xf987f800 15000
+  replygump 0xf987f800 4
+ pause 1000
+  //[][][][][][][][][][][][][][][][]
+  //FINDS THE TAMEABLE ANIMAL
+  //[][][][][][][][][][][][][][][][]
+  while @findtype 0xd3 'any' 'ground' 'any' 'any' 1
+    @clearjournal
+    //[][][][][][][][][][][][][][][][]
+    //USES ANIMAL TAMING AND TARGETS THE FOUND ANIMAL FROM ABOVE
+    //[][][][][][][][][][][][][][][][]
+    useskill "Animal Taming"
+    waitfortarget 10000
+    target 'found'
+    //[][][][][][][][][][][][][][][][]
+    //WAITS FOR THE PASS OR FAIL ON THE HORSE
+    //[][][][][][][][][][][][][][][][]
+    while not @injournal 'It seems to accept you as master.'
+      pause 500
+      if @injournal 'You fail to tame the creature'
+        break
+      endif
+    endwhile
+    //[][][][][][][][][][][][][][][][]
+    //DOUBLE CLICKS THE PET
+    //[][][][][][][][][][][][][][][][]
+    while @findtype 0xd3 'any' 'ground' 'any' 'any' 1
+    useobject 'found'
+    pause 800
+endwhile
+  endwhile
+endwhile
+//[][][][][][][][][][][][][][][][]
+//[][][][][][][][][][][][][][][][]
+//[][][][][][][][][][][][][][][][]
+while skill 'Animal Taming' <= 47
+  //[][][][][][][][][][][][][][][][]
+  //USESES THE TAMER HELPER
+  //[][][][][][][][][][][][][][][][]
+  usetype 0x139a 'any' 'backpack'
+  waitforgump 0xf987f800 15000
+  replygump 0xf987f800 5
+pause 1000
+  //[][][][][][][][][][][][][][][][]
+  //FINDS THE TAMEABLE ANIMAL
+  //[][][][][][][][][][][][][][][][]
+  while @findtype 0xa7 'any' 'ground' 'any' 'any' 1
+    @clearjournal
+    //[][][][][][][][][][][][][][][][]
+    //USES ANIMAL TAMING AND TARGETS THE FOUND ANIMAL FROM ABOVE
+    //[][][][][][][][][][][][][][][][]
+    useskill "Animal Taming"
+    waitfortarget 10000
+    target 'found'
+    //[][][][][][][][][][][][][][][][]
+    //WAITS FOR THE PASS OR FAIL ON THE HORSE
+    //[][][][][][][][][][][][][][][][]
+    while not @injournal 'It seems to accept you as master.'
+      pause 500
+      if @injournal 'You fail to tame the creature'
+        break
+      endif
+    endwhile
+    //[][][][][][][][][][][][][][][][]
+    //DOUBLE CLICKS THE PET
+    //[][][][][][][][][][][][][][][][]
+    while @findtype 0xa7 'any' 'ground' 'any' 'any' 1
+    useobject 'found'
+    pause 800
+endwhile
+  endwhile
+endwhile
+//[][][][][][][][][][][][][][][][]
+//[][][][][][][][][][][][][][][][]
+//[][][][][][][][][][][][][][][][]
+while skill 'Animal Taming' <= 59
+  //[][][][][][][][][][][][][][][][]
+  //USESES THE TAMER HELPER
+  //[][][][][][][][][][][][][][][][]
+  usetype 0x139a 'any' 'backpack'
+  waitforgump 0xf987f800 15000
+  replygump 0xf987f800 6
+pause 1000
+  //[][][][][][][][][][][][][][][][]
+  //FINDS THE TAMEABLE ANIMAL
+  //[][][][][][][][][][][][][][][][]
+  while @findtype 0xca 'any' 'ground' 'any' 'any' 1
+    @clearjournal
+    //[][][][][][][][][][][][][][][][]
+    //USES ANIMAL TAMING AND TARGETS THE FOUND ANIMAL FROM ABOVE
+    //[][][][][][][][][][][][][][][][]
+    useskill "Animal Taming"
+    waitfortarget 10000
+    target 'found'
+    //[][][][][][][][][][][][][][][][]
+    //WAITS FOR THE PASS OR FAIL ON THE HORSE
+    //[][][][][][][][][][][][][][][][]
+    while not @injournal 'It seems to accept you as master.'
+      pause 500
+      if @injournal 'You fail to tame the creature'
+        break
+      endif
+    endwhile
+    //[][][][][][][][][][][][][][][][]
+    //DOUBLE CLICKS THE PET
+    //[][][][][][][][][][][][][][][][]
+    while @findtype 0xca 'any' 'ground' 'any' 'any' 1
+    useobject 'found'
+    pause 800
+endwhile
+  endwhile
+endwhile
+//[][][][][][][][][][][][][][][][]
+//[][][][][][][][][][][][][][][][]
+//[][][][][][][][][][][][][][][][]
+while skill 'Animal Taming' <= 65
+  //[][][][][][][][][][][][][][][][]
+  //USESES THE TAMER HELPER
+  //[][][][][][][][][][][][][][][][]
+  usetype 0x139a 'any' 'backpack'
+  waitforgump 0xf987f800 15000
+  replygump 0xf987f800 7
+pause 1000
+  //[][][][][][][][][][][][][][][][]
+  //FINDS THE TAMEABLE ANIMAL
+  //[][][][][][][][][][][][][][][][]
+  while @findtype 0xea 'any' 'ground' 'any' 'any' 1
+    @clearjournal
+    //[][][][][][][][][][][][][][][][]
+    //USES ANIMAL TAMING AND TARGETS THE FOUND ANIMAL FROM ABOVE
+    //[][][][][][][][][][][][][][][][]
+    useskill "Animal Taming"
+    waitfortarget 10000
+    target 'found'
+    //[][][][][][][][][][][][][][][][]
+    //WAITS FOR THE PASS OR FAIL ON THE HORSE
+    //[][][][][][][][][][][][][][][][]
+    while not @injournal 'It seems to accept you as master.'
+      pause 500
+      if @injournal 'You fail to tame the creature'
+        break
+      endif
+    endwhile
+    //[][][][][][][][][][][][][][][][]
+    //DOUBLE CLICKS THE PET
+    //[][][][][][][][][][][][][][][][]
+    while @findtype 0xea 'any' 'ground' 'any' 'any' 1
+    useobject 'found'
+    pause 800
+endwhile
+  endwhile
+endwhile
+//[][][][][][][][][][][][][][][][]
+//[][][][][][][][][][][][][][][][]
+//[][][][][][][][][][][][][][][][]
+while skill 'Animal Taming' <= 70
+  //[][][][][][][][][][][][][][][][]
+  //USESES THE TAMER HELPER
+  //[][][][][][][][][][][][][][][][]
+  usetype 0x139a 'any' 'backpack'
+  waitforgump 0xf987f800 15000
+  replygump 0xf987f800 8
+pause 1000
+  //[][][][][][][][][][][][][][][][]
+  //FINDS THE TAMEABLE ANIMAL
+  //[][][][][][][][][][][][][][][][]
+  while @findtype 0xd4 'any' 'ground' 'any' 'any' 1
+    @clearjournal
+    //[][][][][][][][][][][][][][][][]
+    //USES ANIMAL TAMING AND TARGETS THE FOUND ANIMAL FROM ABOVE
+    //[][][][][][][][][][][][][][][][]
+    useskill "Animal Taming"
+    waitfortarget 10000
+    target 'found'
+    //[][][][][][][][][][][][][][][][]
+    //WAITS FOR THE PASS OR FAIL ON THE HORSE
+    //[][][][][][][][][][][][][][][][]
+    while not @injournal 'It seems to accept you as master.'
+      pause 500
+      if @injournal 'You fail to tame the creature'
+        break
+      endif
+    endwhile
+    //[][][][][][][][][][][][][][][][]
+    //DOUBLE CLICKS THE PET
+    //[][][][][][][][][][][][][][][][]
+    while @findtype 0xd4 'any' 'ground' 'any' 'any' 1
+    useobject 'found'
+    pause 800
+endwhile
+  endwhile
+endwhile
+//[][][][][][][][][][][][][][][][]
+//[][][][][][][][][][][][][][][][]
+//[][][][][][][][][][][][][][][][]
+while skill 'Animal Taming' <= 80
+  //[][][][][][][][][][][][][][][][]
+  //USESES THE TAMER HELPER
+  //[][][][][][][][][][][][][][][][]
+  usetype 0x139a 'any' 'backpack'
+  waitforgump 0xf987f800 15000
+  replygump 0xf987f800 9
+pause 1000
+  //[][][][][][][][][][][][][][][][]
+  //FINDS THE TAMEABLE ANIMAL
+  //[][][][][][][][][][][][][][][][]
+  while @findtype 0xe9 'any' 'ground' 'any' 'any' 1
+    @clearjournal
+    //[][][][][][][][][][][][][][][][]
+    //USES ANIMAL TAMING AND TARGETS THE FOUND ANIMAL FROM ABOVE
+    //[][][][][][][][][][][][][][][][]
+    useskill "Animal Taming"
+    waitfortarget 10000
+    target 'found'
+    //[][][][][][][][][][][][][][][][]
+    //WAITS FOR THE PASS OR FAIL ON THE HORSE
+    //[][][][][][][][][][][][][][][][]
+    while not @injournal 'It seems to accept you as master.'
+      pause 500
+      if @injournal 'You fail to tame the creature'
+        break
+      endif
+    endwhile
+    //[][][][][][][][][][][][][][][][]
+    //DOUBLE CLICKS THE PET
+    //[][][][][][][][][][][][][][][][]
+    while @findtype 0xe9 'any' 'ground' 'any' 'any' 1
+    useobject 'found'
+    pause 800
+endwhile
+  endwhile
+endwhile
+//[][][][][][][][][][][][][][][][]
+//[][][][][][][][][][][][][][][][]
+//[][][][][][][][][][][][][][][][]
+while skill 'Animal Taming' <= 90
+  //[][][][][][][][][][][][][][][][]
+  //USESES THE TAMER HELPER
+  //[][][][][][][][][][][][][][][][]
+  usetype 0x139a 'any' 'backpack'
+  waitforgump 0xf987f800 15000
+  replygump 0xf987f800 10
+pause 1000
+  //[][][][][][][][][][][][][][][][]
+  //FINDS THE TAMEABLE ANIMAL
+  //[][][][][][][][][][][][][][][][]
+  while @findtype 0x50 'any' 'ground' 'any' 'any' 1
+    @clearjournal
+    //[][][][][][][][][][][][][][][][]
+    //USES ANIMAL TAMING AND TARGETS THE FOUND ANIMAL FROM ABOVE
+    //[][][][][][][][][][][][][][][][]
+    useskill "Animal Taming"
+    waitfortarget 10000
+    target 'found'
+    //[][][][][][][][][][][][][][][][]
+    //WAITS FOR THE PASS OR FAIL ON THE HORSE
+    //[][][][][][][][][][][][][][][][]
+    while not @injournal 'It seems to accept you as master.'
+      pause 500
+      if @injournal 'You fail to tame the creature'
+        break
+      endif
+    endwhile
+    //[][][][][][][][][][][][][][][][]
+    //DOUBLE CLICKS THE PET
+    //[][][][][][][][][][][][][][][][]
+    while @findtype 0x50 'any' 'ground' 'any' 'any' 1
+    useobject 'found'
+    pause 800
+endwhile
+  endwhile
+endwhile
+//[][][][][][][][][][][][][][][][]
+//[][][][][][][][][][][][][][][][]
+//[][][][][][][][][][][][][][][][]
+while skill 'Animal Taming' <= 100
+  //[][][][][][][][][][][][][][][][]
+  //USESES THE TAMER HELPER
+  //[][][][][][][][][][][][][][][][]
+  usetype 0x139a 'any' 'backpack'
+  waitforgump 0xf987f800 15000
+  replygump 0xf987f800 11
+pause 1000
+  //[][][][][][][][][][][][][][][][]
+  //FINDS THE TAMEABLE ANIMAL
+  //[][][][][][][][][][][][][][][][]
+  while @findtype 0xf6 'any' 'ground' 'any' 'any' 1
+    @clearjournal
+    //[][][][][][][][][][][][][][][][]
+    //USES ANIMAL TAMING AND TARGETS THE FOUND ANIMAL FROM ABOVE
+    //[][][][][][][][][][][][][][][][]
+    useskill "Animal Taming"
+    waitfortarget 10000
+    target 'found'
+    //[][][][][][][][][][][][][][][][]
+    //WAITS FOR THE PASS OR FAIL ON THE HORSE
+    //[][][][][][][][][][][][][][][][]
+    while not @injournal 'It seems to accept you as master.'
+      pause 500
+      if @injournal 'You fail to tame the creature'
+        break
+      endif
+    endwhile
+    //[][][][][][][][][][][][][][][][]
+    //DOUBLE CLICKS THE PET
+    //[][][][][][][][][][][][][][][][]
+    while @findtype 0xf6 'any' 'ground' 'any' 'any' 1
+    useobject 'found'
+    pause 800
+endwhile
+  endwhile
+endwhile
+//[][][][][][][][][][][][][][][][]
+//[][][][][][][][][][][][][][][][]
+//[][][][][][][][][][][][][][][][]
+while skill 'Animal Taming' <= 120
+  //[][][][][][][][][][][][][][][][]
+  //USESES THE TAMER HELPER
+  //[][][][][][][][][][][][][][][][]
+  usetype 0x139a 'any' 'backpack'
+  waitforgump 0xf987f800 15000
+  replygump 0xf987f800 12
+pause 1000
+  //[][][][][][][][][][][][][][][][]
+  //FINDS THE TAMEABLE ANIMAL
+  //[][][][][][][][][][][][][][][][]
+  while @findtype 0xf3 'any' 'ground' 'any' 'any' 1
+    @clearjournal
+    //[][][][][][][][][][][][][][][][]
+    //USES ANIMAL TAMING AND TARGETS THE FOUND ANIMAL FROM ABOVE
+    //[][][][][][][][][][][][][][][][]
+    useskill "Animal Taming"
+    waitfortarget 10000
+    target 'found'
+    //[][][][][][][][][][][][][][][][]
+    //WAITS FOR THE PASS OR FAIL ON THE HORSE
+    //[][][][][][][][][][][][][][][][]
+    while not @injournal 'It seems to accept you as master.'
+      pause 500
+      if @injournal 'You fail to tame the creature'
+        break
+      endif
+    endwhile
+    //[][][][][][][][][][][][][][][][]
+    //DOUBLE CLICKS THE PET
+    //[][][][][][][][][][][][][][][][]
+    while @findtype 0xf3 'any' 'ground' 'any' 'any' 1
+    useobject 'found'
+    pause 800
+endwhile
+  endwhile
+endwhile

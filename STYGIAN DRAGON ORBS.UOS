@@ -1,0 +1,19 @@
+//[][][][][][][][][][][][][][][]
+//XCESS WOVLESBANE
+//USE ORBS FAST AT ALTER FOR STYGIAN DRAGON
+//[][][][][][][][][][][][][][][]
+useobject 0x40015E28
+waitfortarget 10000
+@targettype 0x573E 0x080f 3
+pause 250
+useobject 0x40015E29
+waitfortarget 10000
+@targettype 0x573E 0x080f 3
+pause 250
+useobject 0x40015E26
+waitfortarget 10000
+@targettype 0x573E 0x080f 3
+pause 250
+useobject 0x40015E27
+waitfortarget 10000
+@targettype 0x573E 0x080f 3

@@ -1,0 +1,387 @@
+//[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+//XCESS WOLVESBANE AUTO SPELLBOOK
+//NEED SCRIBES TOMB AND TWO PACKS
+//LOCK ONE OF THE PACKS ON THE GROUND FOLLOW PROMPTS
+//CHECK LOOP ON
+//[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+if not findobject 'SBB' 'any' 'backpack'
+headmsg 'SELECT THE BAG WITH THE TOMB IN IT'
+promptalias 'SBB'
+pause 250
+endif
+if not findobject 'BBAG' 'any' 'ground' 'any' 2
+    headmsg 'WHERE TO PUT FULL BOOKS'
+    promptalias 'BBAG'
+endif
+pause 250
+//[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+//MAKES A BOOK
+//[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+pause 1000
+while not @findtype 0x0EFA 'any' 'SBB'
+usetype 0x0FBE 'any' 'SBB'
+waitforgump 0x6abce12 15000
+replygump 0x6abce12 1 "" "0" "5"
+waitforgump 0x6abce12 15000
+replygump 0x6abce12 2 "" "0" "10"
+waitforgump 0x6abce12 15000
+replygump 0x6abce12 0 "" "0" "10"
+pause 500
+usetype 0x0FBF 'any' 'SBB'
+waitforgump 0x38920abd 15000
+replygump 0x38920abd 36
+waitforgump 0x38920abd 15000
+replygump 0x38920abd 37
+waitforgump 0x6abce12 15000
+replygump 0x6abce12 225 "" "0" "1"
+waitforgump 0x38920abd 15000
+replygump 0x38920abd 0
+pause 3000
+endwhile
+//[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+//[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+pause 500
+//[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+//[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+if not listexists 'bscrolls'
+    createlist 'bscrolls'
+endif
+@clearlist 'bscrolls'
+pushlist 'bscrolls' 0x1F2D
+pushlist 'bscrolls' 0x1F2E
+pushlist 'bscrolls' 0x1F2F
+pushlist 'bscrolls' 0x1F30
+pushlist 'bscrolls' 0x1F31
+pushlist 'bscrolls' 0x1F32
+pushlist 'bscrolls' 0x1F33
+pushlist 'bscrolls' 0x1F34
+pushlist 'bscrolls' 0x1F35
+pushlist 'bscrolls' 0x1F36
+pushlist 'bscrolls' 0x1F37
+pushlist 'bscrolls' 0x1F38
+pushlist 'bscrolls' 0x1F39
+pushlist 'bscrolls' 0x1F3A
+pushlist 'bscrolls' 0x1F3B
+pushlist 'bscrolls' 0x1F3C
+pushlist 'bscrolls' 0x1F3D
+pushlist 'bscrolls' 0x1F3E
+pushlist 'bscrolls' 0x1F3F
+pushlist 'bscrolls' 0x1F40
+pushlist 'bscrolls' 0x1F41
+pushlist 'bscrolls' 0x1F42
+pushlist 'bscrolls' 0x1F43
+pushlist 'bscrolls' 0x1F44
+pushlist 'bscrolls' 0x1F45
+pushlist 'bscrolls' 0x1F46
+pushlist 'bscrolls' 0x1F47
+pushlist 'bscrolls' 0x1F48
+pushlist 'bscrolls' 0x1F49
+pushlist 'bscrolls' 0x1F4A
+pushlist 'bscrolls' 0x1F4B
+pushlist 'bscrolls' 0x1F4C
+pushlist 'bscrolls' 0x1F4D
+pushlist 'bscrolls' 0x1F4E
+pushlist 'bscrolls' 0x1F4F
+pushlist 'bscrolls' 0x1F50
+pushlist 'bscrolls' 0x1F51
+pushlist 'bscrolls' 0x1F52
+pushlist 'bscrolls' 0x1F53
+pushlist 'bscrolls' 0x1F54
+pushlist 'bscrolls' 0x1F55
+pushlist 'bscrolls' 0x1F56
+pushlist 'bscrolls' 0x1F57
+pushlist 'bscrolls' 0x1F58
+pushlist 'bscrolls' 0x1F59
+pushlist 'bscrolls' 0x1F5A
+pushlist 'bscrolls' 0x1F5B
+pushlist 'bscrolls' 0x1F5C
+pushlist 'bscrolls' 0x1F5D
+pushlist 'bscrolls' 0x1F5E
+pushlist 'bscrolls' 0x1F5F
+pushlist 'bscrolls' 0x1F60
+pushlist 'bscrolls' 0x1F61
+pushlist 'bscrolls' 0x1F62
+pushlist 'bscrolls' 0x1F63
+pushlist 'bscrolls' 0x1F64
+pushlist 'bscrolls' 0x1F65
+pushlist 'bscrolls' 0x1F66
+pushlist 'bscrolls' 0x1F67
+pushlist 'bscrolls' 0x1F68
+pushlist 'bscrolls' 0x1F69
+pushlist 'bscrolls' 0x1F6C
+pushlist 'bscrolls' 0x1F6B
+pushlist 'bscrolls' 0x1F6A
+//[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+//[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+if @findtype 0x0EFA 'any' 'SBB'
+    setalias 'SB' 'found'
+endif
+usetype 0x0FBE 'any' 'backpack'
+waitforgump 0x6abce12 15000
+pause 650
+replygump 0x6abce12 5 "" "0" "1"
+waitforgump 0x6abce12 15000
+while contents 'backpack' >= 115
+  for 0 to 'bscrolls' 
+    while @movetype bscrolls[] 'backpack' 'SB'
+        pause 640
+    endwhile
+endfor
+endwhile
+replygump 0x6abce12 6
+waitforgump 0x6abce12 15000
+replygump 0x6abce12 7
+waitforgump 0x6abce12 15000
+replygump 0x6abce12 8
+waitforgump 0x6abce12 15000
+while contents 'backpack' >= 115
+  for 0 to 'bscrolls' 
+    while @movetype bscrolls[] 'backpack' 'SB'
+        pause 640
+    endwhile
+endfor
+endwhile
+replygump 0x6abce12 9
+waitforgump 0x6abce12 15000
+replygump 0x6abce12 10
+waitforgump 0x6abce12 15000
+replygump 0x6abce12 11
+waitforgump 0x6abce12 15000
+replygump 0x6abce12 12
+waitforgump 0x6abce12 15000
+while contents 'backpack' >= 115
+  for 0 to 'bscrolls' 
+    while @movetype bscrolls[] 'backpack' 'SB'
+        pause 640
+    endwhile
+endfor
+endwhile
+replygump 0x6abce12 14
+waitforgump 0x6abce12 15000
+replygump 0x6abce12 15
+waitforgump 0x6abce12 15000
+replygump 0x6abce12 16
+waitforgump 0x6abce12 15000
+replygump 0x6abce12 17
+waitforgump 0x6abce12 15000
+while contents 'backpack' >= 115
+  for 0 to 'bscrolls' 
+    while @movetype bscrolls[] 'backpack' 'SB'
+        pause 640
+    endwhile
+endfor
+endwhile
+replygump 0x6abce12 18
+waitforgump 0x6abce12 15000
+replygump 0x6abce12 19
+waitforgump 0x6abce12 15000
+replygump 0x6abce12 20
+waitforgump 0x6abce12 15000
+replygump 0x6abce12 21
+waitforgump 0x6abce12 15000
+while contents 'backpack' >= 115
+  for 0 to 'bscrolls' 
+    while @movetype bscrolls[] 'backpack' 'SB'
+        pause 640
+    endwhile
+endfor
+endwhile
+replygump 0x6abce12 227
+waitforgump 0x6abce12 15000
+replygump 0x6abce12 23
+waitforgump 0x6abce12 15000
+replygump 0x6abce12 24
+waitforgump 0x6abce12 15000
+while contents 'backpack' >= 115
+  for 0 to 'bscrolls' 
+    while @movetype bscrolls[] 'backpack' 'SB'
+        pause 640
+    endwhile
+endfor
+endwhile
+replygump 0x6abce12 25
+waitforgump 0x6abce12 15000
+replygump 0x6abce12 26
+waitforgump 0x6abce12 15000
+replygump 0x6abce12 27
+waitforgump 0x6abce12 15000
+replygump 0x6abce12 28
+waitforgump 0x6abce12 15000
+while contents 'backpack' >= 115
+ for 0 to 'bscrolls' 
+    while @movetype bscrolls[] 'backpack' 'SB'
+        pause 640
+    endwhile
+endfor
+endwhile
+replygump 0x6abce12 29
+waitforgump 0x6abce12 15000
+replygump 0x6abce12 30
+waitforgump 0x6abce12 15000
+replygump 0x6abce12 32
+waitforgump 0x6abce12 15000
+replygump 0x6abce12 33
+waitforgump 0x6abce12 15000
+while contents 'backpack' >= 115
+  for 0 to 'bscrolls' 
+    while @movetype bscrolls[] 'backpack' 'SB'
+        pause 640
+    endwhile
+endfor
+endwhile
+replygump 0x6abce12 34
+waitforgump 0x6abce12 15000
+replygump 0x6abce12 35
+waitforgump 0x6abce12 15000
+replygump 0x6abce12 36
+waitforgump 0x6abce12 15000
+replygump 0x6abce12 37
+waitforgump 0x6abce12 15000
+while contents 'backpack' >= 115
+  for 0 to 'bscrolls' 
+    while @movetype bscrolls[] 'backpack' 'SB'
+        pause 640
+    endwhile
+endfor
+endwhile
+replygump 0x6abce12 38
+waitforgump 0x6abce12 15000
+replygump 0x6abce12 39
+waitforgump 0x6abce12 15000
+replygump 0x6abce12 41
+waitforgump 0x6abce12 15000
+replygump 0x6abce12 42
+waitforgump 0x6abce12 15000
+while contents 'backpack' >= 115
+  for 0 to 'bscrolls' 
+    while @movetype bscrolls[] 'backpack' 'SB'
+        pause 640
+    endwhile
+endfor
+endwhile
+replygump 0x6abce12 43
+waitforgump 0x6abce12 15000
+replygump 0x6abce12 44
+waitforgump 0x6abce12 15000
+replygump 0x6abce12 45
+waitforgump 0x6abce12 15000
+replygump 0x6abce12 46
+waitforgump 0x6abce12 15000
+while contents 'backpack' >= 115
+  for 0 to 'bscrolls' 
+    while @movetype bscrolls[] 'backpack' 'SB'
+        pause 640
+    endwhile
+endfor
+endwhile
+replygump 0x6abce12 47
+waitforgump 0x6abce12 15000
+replygump 0x6abce12 48
+waitforgump 0x6abce12 15000
+replygump 0x6abce12 227
+waitforgump 0x6abce12 15000
+replygump 0x6abce12 50
+waitforgump 0x6abce12 15000
+while contents 'backpack' >= 115
+  for 0 to 'bscrolls' 
+    while @movetype bscrolls[] 'backpack' 'SB'
+        pause 640
+    endwhile
+endfor
+endwhile
+replygump 0x6abce12 51
+waitforgump 0x6abce12 15000
+replygump 0x6abce12 52
+waitforgump 0x6abce12 15000
+replygump 0x6abce12 53
+waitforgump 0x6abce12 15000
+replygump 0x6abce12 54
+waitforgump 0x6abce12 15000
+while contents 'backpack' >= 115
+  for 0 to 'bscrolls' 
+    while @movetype bscrolls[] 'backpack' 'SB'
+        pause 640
+    endwhile
+endfor
+endwhile
+replygump 0x6abce12 55
+waitforgump 0x6abce12 15000
+replygump 0x6abce12 56
+waitforgump 0x6abce12 15000
+replygump 0x6abce12 57
+waitforgump 0x6abce12 15000
+replygump 0x6abce12 66
+waitforgump 0x6abce12 15000
+while contents 'backpack' >= 115
+  for 0 to 'bscrolls' 
+    while @movetype bscrolls[] 'backpack' 'SB'
+        pause 640
+    endwhile
+endfor
+endwhile
+replygump 0x6abce12 65
+waitforgump 0x6abce12 15000
+replygump 0x6abce12 64
+waitforgump 0x6abce12 15000
+replygump 0x6abce12 63
+waitforgump 0x6abce12 15000
+replygump 0x6abce12 62
+waitforgump 0x6abce12 15000
+while contents 'backpack' >= 115
+  for 0 to 'bscrolls' 
+    while @movetype bscrolls[] 'backpack' 'SB'
+        pause 640
+    endwhile
+endfor
+endwhile
+replygump 0x6abce12 61
+waitforgump 0x6abce12 15000
+replygump 0x6abce12 60
+waitforgump 0x6abce12 15000
+replygump 0x6abce12 59
+waitforgump 0x6abce12 15000
+replygump 0x6abce12 68
+waitforgump 0x6abce12 15000
+while contents 'backpack' >= 115
+  for 0 to 'bscrolls' 
+    while @movetype bscrolls[] 'backpack' 'SB'
+        pause 640
+    endwhile
+endfor
+endwhile
+replygump 0x6abce12 69
+waitforgump 0x6abce12 15000
+replygump 0x6abce12 70
+waitforgump 0x6abce12 15000
+replygump 0x6abce12 71
+waitforgump 0x6abce12 15000
+replygump 0x6abce12 72
+waitforgump 0x6abce12 15000
+while contents 'backpack' >= 115
+  for 0 to 'bscrolls' 
+    while @movetype bscrolls[] 'backpack' 'SB'
+        pause 640
+    endwhile
+endfor
+endwhile
+replygump 0x6abce12 73
+waitforgump 0x6abce12 15000
+replygump 0x6abce12 74
+waitforgump 0x6abce12 15000
+replygump 0x6abce12 75
+waitforgump 0x6abce12 15000
+while not property '64' 'SB'
+for 0 to 'bscrolls' 
+    while @movetype bscrolls[] 'backpack' 'SB'
+        pause 640
+    endwhile
+endfor
+endwhile
+pause 640
+while @movetype 0x0EFA 'SBB' 'BBAG'
+    pause 640
+endwhile
+replygump 0x6abce12 225 "" "0" "1"
+waitforgump 0x6abce12 15000
+replygump 0x6abce12 0 "" "0" "1"
+pause 1000

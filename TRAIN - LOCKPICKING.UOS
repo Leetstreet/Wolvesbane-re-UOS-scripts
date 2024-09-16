@@ -1,0 +1,29 @@
+//[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+//XCESS LOCKPICK TRAINER 1.0[][][][][][][][][][][][][][][][][][]
+//WOLVESBANE TRAINING BOXES [][][][][][][][][][][][][][][][][][]
+//GET A BAG OF HOLDING PUT LOCKPICKS IN IT[][][][][][][][][][][]
+//[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+headmsg 'Click the box to unlock'
+promptalias 'bo'
+while skill 'lockpicking' < 100
+    for 20
+        if not @findtype 0x14FC 'any' 'backpack'
+            headmsg 'YOU ARE OUT OF PICKS'
+            stop
+        endif
+    @clearjournal
+    @usetype 0x14FC 'any' 'backpack'
+    waitfortarget 15000
+    target 'bo'
+    while not @injournal 'The lock quickly yields to your skill'
+        pause 500
+        if @injournal 'You are unable to pick the lock.'
+            break
+        endif
+     endwhile
+    endfor
+useobject 'bo'
+endwhile
+//[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+//[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+//[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
