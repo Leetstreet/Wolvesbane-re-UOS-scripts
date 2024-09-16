@@ -1,0 +1,9 @@
+promptalias 'pet'
+headmsg 'TARGET YOUR PET'
+while skill 'Animal Taming' < 120
+cast "Combat Training"
+waitfortarget 10000
+target 'pet'
+waitforgump 2464511670 10000
+replygump 2464511670 0
+endwhile

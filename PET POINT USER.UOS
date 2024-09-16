@@ -1,0 +1,37 @@
+//[][][][][][][][][][][][][][][][][][][]
+//XCESS WOLVESBANE
+//PET POINT USER
+//USES PET POINTS 
+//MOVES PETS FROM ONE CHEST TO ANOTHER
+//[][][][][][][][][][][][][][][][][][][]
+promptalias 'one'
+promptalias 'two'
+removetimer 'breaker'
+createtimer 'breaker'
+while @findtype 0x259E 'any' 'one'
+    movetype 0x259E 'one' 'backpack'
+    pause 640
+    usetype 0x259E 'any' 'backpack' 0
+    pause 640
+    if @findtype 0x0076 'any' 'ground' 'any' 1
+        waitforcontext 'found' 10 10000
+    endif
+    pause 640
+    waitforgump 0x12aae645 10000
+replygump 0x12aae645 3
+for 2000
+    waitforgump 0xc3328971 250
+replygump 0xc3328971 12
+if timer 'breaker' > 120000
+    settimer 'breaker' 0
+    break
+endif
+endfor
+waitforgump 0xc3328971 250
+replygump 0xc3328971 0
+pause 640
+usetype 0x1374 'any' 'backpack'
+pause 640
+movetype 0x259E 'backpack' 'two'
+pause 640
+endwhile

@@ -1,0 +1,7 @@
+//XCESS WOLVESBANE
+//AUTO BANDAGE
+//REQUIRES ENHANCED BANDAGE
+while hits self < maxhits or poisoned self
+    msg '[bandself'
+endwhile
+pause 500
