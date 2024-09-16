@@ -1,0 +1,18 @@
+//XCESS OF WOLVESBANE
+//REMOVE TOKEN PILES FROM MASTER STORAGE FOR TOKEN STONE
+//SET THE NUMBER YOU WISH TO REMOVE BELOW
+if not listexists 'HOWMANY'
+    createlist 'HOWMANY'
+endif
+@clearlist 'HOWMANY'
+pushlist 'HOWMANY' 1000000   //<----NUMBER OF TOKENS YOU WISH TO WITHDRAW
+if not @findobject 'masterstorage' 'any' 'backpack'
+    headmsg 'TARGET THE MASTER STORAGE BAG'
+    promptalias 'masterstorage'
+endif
+waitforcontext masterstorage 0 10000
+waitforgump 0xdc465d71 15000
+while @counttype 0x0EED 0x0495 'backpack' < HOWMANY[0]
+replygump 0xdc465d71 4 "" "1" "60000"
+waitforgump 0xdc465d71 15000
+endwhile
