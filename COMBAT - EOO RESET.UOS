@@ -1,0 +1,6 @@
+//[][][][][][][][][][][][][]
+//XCESS WOLVESBANE
+//RESETS EOO
+//[][][][][][][][][][][][][]
+cast 'Enemy of One'
+settimer 'EOO' 0

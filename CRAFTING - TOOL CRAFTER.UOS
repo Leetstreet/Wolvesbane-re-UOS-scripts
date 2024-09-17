@@ -1,0 +1,21 @@
+//XCESS WOVLEBANE
+//THIS DOESNT ISNT SET UP FOR GENERAL POPULATION
+//EDIT IT TO SUIT YOUR NEEDS
+for 30
+  replygump 0x38920abd 21
+  waitforgump 0x38920abd 15000
+  if counttype 0x1bf2 'any' 'backpack' <= 1000
+    waitforcontext 0x14c49 4 15000
+  endif
+endfor
+useobject 0x40054CA8
+while @findtype 0xf39 'any' 'backpack'
+  waitforgump 111922706 10000
+replygump 111922706 40
+waitfortarget 10000
+  @target 'found'
+endwhile
+pause 500
+canceltarget
+
+
