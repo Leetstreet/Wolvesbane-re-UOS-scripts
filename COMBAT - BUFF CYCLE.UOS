@@ -1,0 +1,47 @@
+//[][][][][][][][][][][][][][][][][][][][][]
+//XCESS - WOLVESBANEUO
+//BUFF CYCLER
+//[][][][][][][][][][][][][][][][][][][][][]
+if not timerexists 'cw'
+  createtimer 'cw'
+endif
+if not timerexists 'eoo'
+  createtimer 'eoo'
+endif
+if not timerexists 'sb'
+  createtimer 'sb'
+endif
+if not timerexists 'ls'
+  createtimer 'ls'
+endif
+if timer 'eoo' > 1500
+  if not buffexists 'Enemy of One' 'EOO'
+    cast 'Enemy of One'
+    pause 200
+    settimer 'eoo' 0
+  endif
+endif
+if stam <= 200
+  cast 'Divine Fury'
+  pause 200
+  pause 200
+endif
+if timer 'cw' > 2000
+  if not buffexists 'Concecrate Weapon'
+    cast 'Consecrate Weapon'
+    pause 200
+    settimer 'cw' 0
+  endif
+endif
+@setability 'primary' 'on'
+//if not buffexists 'Lightning Strike'
+//cast 'Lightning Strike'
+//endif
+if timer 'sb' > 200
+  if not buffexists 'Shield Bash'
+    cast 'shieldbashspell'
+    pause 100
+    settimer 'sb' 0
+  endif
+endif
+pause 500

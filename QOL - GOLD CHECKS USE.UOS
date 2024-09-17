@@ -1,0 +1,7 @@
+//[][][][][][][][][][][][][][][][][][][][][]
+//XCESS - WOLVESBANEUO
+//USE GOLD CHECKS IN BACKPACK (2)
+//[][][][][][][][][][][][][][][][][][][][][]
+while @usetype 0x14F0 'any' 'backpack'
+    pause 5
+endwhile

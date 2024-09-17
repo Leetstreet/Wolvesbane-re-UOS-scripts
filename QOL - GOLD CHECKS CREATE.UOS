@@ -1,0 +1,16 @@
+//[][][][][][][][][][][][][][][][][][][][][]
+//XCESS - WOLVESBANEUO
+//USE GOLD CHECKS IN BACKPACK (1)
+//[][][][][][][][][][][][][][][][][][][][][]
+if not @findobject 0x00000794 'any' 'ground' 'any' '3'
+    headmsg 'YOU ARE TOO FAR FROM LADY LUCK'
+    pause 2000
+    headmsg 'YOU ARE TOO FAR FROM LADY LUCK'
+    stop
+endif
+waitforcontext 0x00000794 1 10000
+pause 50
+waitforgump 0xcbde04e9 5000
+if gumpexists 0xcbde04e9
+    replygump 0xcbde04e9 3 "0" "1" "4000"
+endif

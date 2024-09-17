@@ -1,0 +1,12 @@
+//[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+//XCESS WOVLEBANE
+//SHRINK MERCS WITH LEASH
+//[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+while @findtype 0x191 'any' 'ground' 1 3
+  @usetype 0x1374 1153 'backpack'
+  waitfortarget 2000
+  target 'found'
+  pause 100
+endwhile
+pause 250
+canceltarget

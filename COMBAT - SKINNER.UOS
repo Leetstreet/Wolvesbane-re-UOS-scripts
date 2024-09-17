@@ -1,0 +1,25 @@
+//[][][][][][][][][][][][][][][][][][][][][]
+//XCESS OF WOLVESBANE
+//NOT NEEDED RE HAS ITS OWN AUTO SKINNER
+//[][][][][][][][][][][][][][][][][][][][][]
+getenemy 'murderer' 'enemy' 'criminal' 'gray' 'closest'
+attack 'enemy'
+//look for corpses
+if not @findtype '0x2006' 'any' 'ground' '1' '3'
+  pause 1000
+  if timer 'loot' >= 5000
+    msg '[loot'
+    settimer 'loot' 0
+  endif
+else
+  @setalias! 'o' 'found'
+endif
+@usetype 0xec4 '0' 'backpack'
+waitfortarget 1000
+target! 'o'
+pause 500
+//find loot from loot array
+ignoreobject 'o'
+if weight > 300
+  replygump 0x6abce12 61
+endif
