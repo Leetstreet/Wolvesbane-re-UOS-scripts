@@ -1,0 +1,8 @@
+//[][][][][][][][][][][][][][][][][][][][][]
+//XCESS - WOLVESBANE UO
+//MOVES SCROLLS OF TRANSCENDENCE TO STORAGE BOOK
+//[][][][][][][][][][][][][][][][][][][][][]
+promptalias 'tbook'
+while @movetype 0x14EF 'backpack' 'tbook' 0 0 0 0x0490
+    pause 640
+endwhile

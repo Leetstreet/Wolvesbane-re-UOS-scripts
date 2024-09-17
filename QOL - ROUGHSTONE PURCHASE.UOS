@@ -1,0 +1,18 @@
+//[][][][][][][][][][][][][][][][][][][][][]
+//WOLVESBANE PURCHASE ROUGH STONES
+//GO STAND BY GOLD VENDOR IN WOLVESBANE
+//CREATED BY XCESS - WOLVESBANE
+//[][][][][][][][][][][][][][][][][][][][][]
+promptalias 'bagoholding'
+useobject 0x400b7dcb
+pause 250
+for 5000 //HOW MANY YOU WANNA BUY
+  replygump 0xfcc8d6e3 3
+  waitforgump 0x709c9a52 15000
+  replygump 0x709c9a52 2
+  if @findtype 0x1726 '1000' 'backpack' 50 0
+      @movetype 0x1726 'backpack' 'bagoholding' 0 0 0 0x03e8 'any' 0
+  endif
+endfor
+waitforgump 0xfcc8d6e3 15000
+replygump 0xfcc8d6e3 0

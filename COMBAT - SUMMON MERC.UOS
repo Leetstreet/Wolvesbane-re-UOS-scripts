@@ -1,0 +1,7 @@
+//[][][][][][][][][][][][][]
+//XCESS WOLVESBANE
+//SUMMON MERCS TO GUARD YOU
+//[][][][][][][][][][][][][]
+while @usetype 0x2107 'any' 'backpack'
+endwhile
+msg 'all guard me'

@@ -1,0 +1,9 @@
+//[][][][][][][][][][][][][]
+//XCESS WOLVESBANE
+//AUTO LOOT
+//[][][][][][][][][][][][][]
+if @findtype '0x2006' 'any' 'ground' 1 3 or @findtype '0x0EED' 'any' 'ground' 1 3
+    msg '[loot'
+    pause 500
+endif
+pause 500

@@ -1,6 +1,8 @@
+//[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
 //XCESS WOVLEBANE
 //THIS DOESNT ISNT SET UP FOR GENERAL POPULATION
 //EDIT IT TO SUIT YOUR NEEDS
+//[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
 for 30
   replygump 0x38920abd 21
   waitforgump 0x38920abd 15000

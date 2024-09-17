@@ -1,0 +1,104 @@
+//[][][][][][][][][][][][][][][][][][][][][]
+//XCESS OF WOLVESBANE
+//RUNIC TINKER JEWLERY (1)
+//PROBABLY NOT FOR GENERAL POPULATION 
+//EDIT TO YOUR LIKING
+//[][][][][][][][][][][][][][][][][][][][][]
+if not findobject 'WSC'
+    headmsg 'WEAPONSKILL + CHIV GREY'
+  promptalias 'WSC'
+endif
+if not findobject 'WST'
+    headmsg 'WEAPONSKILL + TACT YELLOW'
+  promptalias 'WST'
+endif
+if not findobject 'ANT'
+    headmsg 'ANATOMY + TACTICS PURPLE'
+  promptalias 'ANT'
+endif
+if not findobject 'CHT'
+    headmsg 'CHIV + TACTICS BLUE'
+  promptalias 'CHT'
+endif
+if not @findobject 'WS'
+    headmsg 'WEAPON SKILL + OTHER TEAL'
+promptalias 'WS'
+endif
+if not @findobject 'OTHER'
+    headmsg 'EVERYTHING ELSE GREEN'
+promptalias 'OTHER'
+endif
+if not listexists 'jew'
+  createlist 'jew'
+  pushlist 'jew' 0x1086
+  pushlist 'jew' 0x108a
+  pushlist 'jew' 0x1087
+  pushlist 'jew' 0x1089
+  pushlist 'jew' 0x1f05
+endif
+//[][][][][][][][][][][][][][][][][][]
+for 0 to 'jew'
+//[][][][][][][][][][][][][][][][][][]
+//WEAPONSKILL + CHIV
+//[][][][][][][][][][][][][][][][][][]
+  while @findtype  jew[] 'any' 'backpack' 'any' 0
+    if @property 'Swordsmanship' 'found' and @property 'Chivalry' 'found'
+      @moveitem 'found' 'WSC'
+    elseif @property 'archery' 'found' and @property 'Chivalry' 'found'
+      @moveitem 'found' 'WSC'
+    elseif @property 'fencing' 'found' and @property 'Chivalry' 'found'
+      @moveitem 'found' 'WSC'
+    elseif @property 'mace fighting' 'found' and @property 'Chivalry' 'found'
+      @moveitem 'found' 'WSC'
+//[][][][][][][][][][][][][][][][][][]
+//WEAPONSKILL + TACT
+//[][][][][][][][][][][][][][][][][][]
+ elseif @property 'Swordsmanship' 'found' and @property 'Tactics' 'found'
+      @moveitem 'found' 'WST'
+    elseif @property 'archery' 'found' and @property 'Tactics' 'found'
+      @moveitem 'found' 'WST'
+    elseif @property 'fencing' 'found' and @property 'Tactics' 'found'
+      @moveitem 'found' 'WST'
+    elseif @property 'mace fighting' 'found' and @property 'Tactics' 'found'
+      @moveitem 'found' 'WST'
+//[][][][][][][][][][][][][][][][][][]
+//ANAT + TACT
+//[][][][][][][][][][][][][][][][][][]
+ elseif @property 'Anatomy' 'found' and @property 'Tactics' 'found'
+      @moveitem 'found' 'ANT'
+    elseif @property 'Anatomy' 'found' and @property 'Tactics' 'found'
+      @moveitem 'found' 'ANT'
+    elseif @property 'Anatomy' 'found' and @property 'Tactics' 'found'
+      @moveitem 'found' 'ANT'
+    elseif @property 'Anatomy' 'found' and @property 'Tactics' 'found'
+      @moveitem 'found' 'ANT'
+//[][][][][][][][][][][][][][][][][][]
+//CHIV + TACT
+//[][][][][][][][][][][][][][][][][][]
+elseif @property 'Chivalry' 'found' and @property 'Tactics' 'found'
+      @moveitem 'found' 'CHT'
+    elseif @property 'Chivalry' 'found' and @property 'Tactics' 'found'
+      @moveitem 'found' 'CHT'
+    elseif @property 'Chivalry' 'found' and @property 'Tactics' 'found'
+      @moveitem 'found' 'CHT'
+    elseif @property 'Chivalry' 'found' and @property 'Tactics' 'found'
+      @moveitem 'found' 'CHT'
+//[][][][][][][][][][][][][][][][][][]
+//WEAPONSKILL
+//[][][][][][][][][][][][][][][][][][]
+elseif @property 'Swordsmanship' 'found'
+      @moveitem 'found' 'WS'
+    elseif @property 'archery' 'found'
+      @moveitem 'found' 'WS'
+    elseif @property 'fencing' 'found'
+      @moveitem 'found' 'WS'
+    elseif @property 'mace fighting' 'found'
+      @moveitem 'found' 'WS'
+//[][][][][][][][][][][][][][][][][][]
+//OTHERSTUFF
+//[][][][][][][][][][][][][][][][][][]
+else    
+      @moveitem 'found' 'OTHER'
+    endif
+  endwhile
+endfor

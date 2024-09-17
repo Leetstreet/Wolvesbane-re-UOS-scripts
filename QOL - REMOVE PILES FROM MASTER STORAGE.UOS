@@ -1,6 +1,8 @@
+//[][][][][][][][][][][][][][][][][][][][][]
 //XCESS OF WOLVESBANE
 //REMOVE TOKEN PILES FROM MASTER STORAGE FOR TOKEN STONE
 //SET THE NUMBER YOU WISH TO REMOVE BELOW
+//[][][][][][][][][][][][][][][][][][][][][]
 if not listexists 'HOWMANY'
     createlist 'HOWMANY'
 endif
